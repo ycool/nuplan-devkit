@@ -71,7 +71,9 @@ class NuPlanScenarioBuilder(AbstractScenarioBuilder):
         self._data_root = data_root
         self._map_root = map_root
         self._sensor_root = sensor_root
+        logger.info(f"=== data root: {data_root}")
         self._db_files = discover_log_dbs(data_root if db_files is None else db_files)
+        logger.info(f"=== db_files: {self._db_files}")
         self._map_version = map_version
         self._include_cameras = include_cameras
         self._max_workers = max_workers

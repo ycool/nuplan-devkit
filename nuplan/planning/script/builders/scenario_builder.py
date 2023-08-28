@@ -71,6 +71,7 @@ def get_local_scenario_cache(cache_path: str, feature_names: Set[str]) -> List[P
     :param feature_names: Set of required feature names to check when loading scenario paths from the cache.
     :return: List of discovered cached scenario paths.
     """
+    logger.info(f"cache_path:{cache_path}")
     cache_dir = Path(cache_path)
     assert cache_dir.exists(), f'Local cache {cache_dir} does not exist!'
     assert any(cache_dir.iterdir()), f'No files found in the local cache {cache_dir}!'
