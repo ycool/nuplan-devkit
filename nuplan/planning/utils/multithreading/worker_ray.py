@@ -46,7 +46,7 @@ def initialize_ray(
     env_var_num_nodes = 'num_nodes'
 
     # Read number of CPU cores on current machine
-    number_of_cpus_per_node = threads_per_node if threads_per_node else cpu_count(logical=True)
+    number_of_cpus_per_node = 16 # threads_per_node if threads_per_node else cpu_count(logical=True)
     number_of_gpus_per_node = torch.cuda.device_count() if torch.cuda.is_available() else 0
     if not number_of_gpus_per_node:
         logger.info("Not using GPU in ray")
